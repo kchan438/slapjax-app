@@ -24,6 +24,15 @@ function App() {
                   <li classname="nav-item active">
                     <a className="nav-link" href="#"><Link to="/" className="link">Home</Link><span class="sr-only">(current)</span></a>
                   </li>
+                  <li classname="nav-item">
+                    <a className="nav-link" href="#"><Link to="/music" className="link">Music</Link></a>
+                  </li>
+                  <li classname="nav-item">
+                    <a className="nav-link" href="#"><Link to="/movies" className="link">Movies</Link></a>
+                  </li>
+                  <li classname="nav-item">
+                    <a className="nav-link" href="#"><Link to="/" className="link">Videos</Link></a>
+                  </li>
                 </ul>
               </div>
             </nav>
