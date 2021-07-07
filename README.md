@@ -2,6 +2,27 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## About
+
+This project is a web app in which users can create their own accounts and upload/download their music and videos as well as listen to or watch music and/or videos.
+
+## Technologies to Use
+- React
+    - React Redux
+    - react-player
+- MySQL, NoSQL, or Google Firebase
+- Alogolia for searching content
+- 
+
+## Features
+- Login and registration
+- Search bar
+- Upload new content
+- Download content
+- List to and/or watch videos/movies
+- Favorite content saved on each user profile
+- Like/Dislike Content
+
 ## Available Scripts
 
 In the project directory, you can run:
