@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import { Switch, Route, Link } from 'react-router-dom';
 import {useSelector } from 'react-redux';
 import { Button, Nav, Navbar, NavDropdown, Form, FormControl, InputGroup } from 'react-bootstrap';
+import './App.css';
 //pages
 import Home from './pages/Home';
 import Music from './pages/Music';
@@ -9,7 +10,6 @@ import Videos from './pages/Videos';
 import Register from './pages/Register';
 import Login from './pages/Login';
 
-import './App.css';
 //bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -25,7 +25,7 @@ function App() {
       <div className="outer">
         <div className="inner">
         <Navbar bg="light" expand="lg">
-          <Navbar.Brand href="/home">SlapJax</Navbar.Brand>
+          <Navbar.Brand href="/">SlapJax</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="m-auto">
@@ -49,11 +49,11 @@ function App() {
       <div className="outer">
         <div className="inner">
           <Switch>
-            <Route path="/home" component={Home} />
             <Route path="/music" component={Music} />
             <Route path="/videos" component={Videos} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
+            <Route path="/" component={Home} />
           </Switch>
         </div>
       </div>
