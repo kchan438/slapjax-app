@@ -1,7 +1,13 @@
 import logo from './logo.svg';
 import { Switch, Route, Link } from 'react-router-dom';
 import {useSelector } from 'react-redux';
+import { Button, Nav, Navbar, NavDropdown, Form, FormControl, InputGroup } from 'react-bootstrap';
 //pages
+import Home from './pages/Home';
+import Music from './pages/Music';
+import Videos from './pages/Videos';
+import Register from './pages/Register';
+import Login from './pages/Login';
 
 import './App.css';
 //bootstrap
@@ -11,42 +17,46 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <div className="App">
+
+      <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"></link>
+      </head>
+
       <div className="outer">
         <div className="inner">
-          <div className="nav-bar">
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-link" href="#"><Link to="/" className="link">Home</Link></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-list">
-                  <li classname="nav-item active">
-                    <a className="nav-link" href="#"><Link to="/" className="link">Home</Link><span class="sr-only">(current)</span></a>
-                  </li>
-                  <li classname="nav-item">
-                    <a className="nav-link" href="#"><Link to="/music" className="link">Music</Link></a>
-                  </li>
-                  <li classname="nav-item">
-                    <a className="nav-link" href="#"><Link to="/movies" className="link">Movies</Link></a>
-                  </li>
-                  <li classname="nav-item">
-                    <a className="nav-link" href="#"><Link to="/" className="link">Videos</Link></a>
-                  </li>
-                </ul>
-              </div>
-            </nav>
-          </div>
+        <Navbar bg="light" expand="lg">
+          <Navbar.Brand href="/home">SlapJax</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="m-auto">
+              <Nav.Link href="/home">Home</Nav.Link>
+              <Nav.Link href="/music">Music</Nav.Link>
+              <Nav.Link href="/videos">Video</Nav.Link>
+              {/* <Nav.Link href="/movies">Movies</Nav.Link> */}
+              {/* <Nav.Link href="#music">Search</Nav.Link> */}
+              <InputGroup className="mb-1">
+                <FormControl className="m-auto" placeholder="Search" />
+                <InputGroup.Append>
+                  <Button variant="outline-secondary">Search</Button>
+                </InputGroup.Append>
+              </InputGroup>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
         </div>
       </div>
 
-
-      <Switch>
-        {/* <Route path="" component={} /> */}
-        {/* <Route path="" component={} /> */}
-        {/* <Route path="" component={} /> */}
-        {/* <Route path="" component={} /> */}
-      </Switch>
+      <div className="outer">
+        <div className="inner">
+          <Switch>
+            <Route path="/home" component={Home} />
+            <Route path="/music" component={Music} />
+            <Route path="/videos" component={Videos} />
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
+          </Switch>
+        </div>
+      </div>
     </div>
   );
 }
