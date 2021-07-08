@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import { Switch, Route, Link } from 'react-router-dom';
 import {useSelector } from 'react-redux';
-import { Button, Nav, Navbar, NavDropdown, Form, FormControl, InputGroup } from 'react-bootstrap';
+import { Button, Nav, Navbar, FormControl, InputGroup } from 'react-bootstrap';
 import './App.css';
 //pages
 import Home from './pages/Home';
@@ -9,6 +9,7 @@ import Music from './pages/Music';
 import Videos from './pages/Videos';
 import Register from './pages/Register';
 import Login from './pages/Login';
+import About from './pages/About';
 
 //bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -19,7 +20,12 @@ function App() {
     <div className="App">
 
       <head>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"></link>
+        <link 
+          rel="stylesheet" 
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+        </link>
       </head>
 
       <div className="outer">
@@ -31,11 +37,12 @@ function App() {
             <Nav className="m-auto">
               <Nav.Link href="/home">Home</Nav.Link>
               <Nav.Link href="/music">Music</Nav.Link>
-              <Nav.Link href="/videos">Video</Nav.Link>
+              <Nav.Link href="/videos">Videos</Nav.Link>
               {/* <Nav.Link href="/movies">Movies</Nav.Link> */}
               {/* <Nav.Link href="#music">Search</Nav.Link> */}
+              <Nav.Link href="/about">About</Nav.Link>
               <InputGroup className="mb-1">
-                <FormControl className="m-auto" placeholder="Search" />
+                <FormControl className="m-auto" />
                 <InputGroup.Append>
                   <Button variant="outline-secondary">Search</Button>
                 </InputGroup.Append>
@@ -53,6 +60,7 @@ function App() {
             <Route path="/videos" component={Videos} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
+            <Route path="/about" component={About} />
             <Route path="/" component={Home} />
           </Switch>
         </div>
