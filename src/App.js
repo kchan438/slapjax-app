@@ -10,6 +10,7 @@ import Videos from './pages/Videos';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import About from './pages/About';
+import Upload from './pages/upload';
 
 //bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -38,15 +39,20 @@ function App() {
               <Nav.Link href="/home">Home</Nav.Link>
               <Nav.Link href="/music">Music</Nav.Link>
               <Nav.Link href="/videos">Videos</Nav.Link>
+              {/* Will need to keep track of isLoggedIn */}
+              {/* <Nav.Link href="/upload">Upload</Nav.Link> */}
+              <Nav.Link href="/about">About</Nav.Link>
+              {/* Login and Register links should be dependant on isLoggedIn */}
+              <Nav.Link href="/login">Login</Nav.Link>
+              <Nav.Link href="/register">Register</Nav.Link>
               {/* <Nav.Link href="/movies">Movies</Nav.Link> */}
               {/* <Nav.Link href="#music">Search</Nav.Link> */}
-              <Nav.Link href="/about">About</Nav.Link>
-              <InputGroup className="mb-1">
+              {/* <InputGroup className="mb-1">
                 <FormControl className="m-auto" />
                 <InputGroup.Append>
                   <Button variant="outline-secondary">Search</Button>
                 </InputGroup.Append>
-              </InputGroup>
+              </InputGroup> */}
             </Nav>
           </Navbar.Collapse>
         </Navbar>
@@ -61,6 +67,8 @@ function App() {
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/about" component={About} />
+            {/* Upload button should appear if logged in */}
+            {/* <Route path="/upload" component={Upload} /> */}
             <Route path="/" component={Home} />
           </Switch>
         </div>
